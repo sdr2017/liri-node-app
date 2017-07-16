@@ -1,33 +1,21 @@
 var Twitter = require('twitter');
 var Keys = require("./keys.js");
-console.log(Keys);
+//console.log(Keys);
 
-var client = new Twitter(Keys.twitterKeys);
+var myTwitter = require("./apps/twitter.js")(Keys.twitterKeys);//getting just the twitter keys from the keys.js file
 
 var command = (process.argv[2]);
 
-if (command === 'my-tweets') {
-	tweets();	
-
+switch (command){
+	case "my-tweets": { //need to see a break or return statement outside of every case to stop it
+		myTwitter.tweets(function(myTweets){ //calling the function "tweets" from the twitter.js file and passing it the function "myTweets"
+			console.log(myTweets);
+		});
+	}
+	break;
+	default: //need a default case in case something doesn't match
+	return;
 };
 
-// else if (command === 'spotify-this-song') {
 
-// };
 
-// else if (command === 'movie-this') {
-
-// };
-
-// else if (command === 'do-what-it-says') {
-
-// };
-
-	function tweets() {
-		client.get("favorites/list", function (error, tweets, response) {
-			if (error) throw (error);
-			console.log("this is working!");
-		console.log(tweets);
-		console.log(response);
-		});
-	};
