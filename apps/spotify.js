@@ -7,16 +7,13 @@ var mySpotify = function(keys){
 	var client = new Spotify(keys);
 
 	function spotify(cb) { 
-		debugger;
-	// 	var songOrMovie = (process.argv[3]); 
+		var songOrMovie = (process.argv[3]); 
 
-		client.search({ type: 'track', query: "Centuries"}, function(err, data) {
+		client.search({ type: 'track', query: songOrMovie, limit: 1 }, function(err, data) {
 			if (err) {
     			return console.log('Error occurred: ' + err);
   			}
-  			
 			cb(data);
-  			//console.log(data); 
 			});		
 	};
 

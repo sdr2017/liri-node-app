@@ -20,9 +20,11 @@ switch (command){
 	case "spotify-this-song": { 
 		mySpotify.spotify(function(mySpotify){ 
 			console.log("SPOTIFY DATA",mySpotify);
-			for(var item in mySpotify.tracks.items)
-			{
-				console.log(mySpotify.tracks.items[item].album);
+			for(var item in mySpotify.tracks.items){//log artist name, song, album, preview link from spotify
+				console.log("The name of this track is: ", mySpotify.tracks.items[item].name);
+				console.log("The name of the artist is: ", mySpotify.tracks.items[item].artists[0].name);
+				console.log("The name of the album is: ", mySpotify.tracks.items[item].album.name);
+				console.log("The url to preview the song is: ", mySpotify.tracks.items[item].href);
 			}
 		});
 	}
@@ -30,7 +32,6 @@ switch (command){
 	default: //need a default case in case something doesn't match
 	return;
 };
-debugger;
 
 
 
