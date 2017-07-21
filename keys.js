@@ -11,9 +11,8 @@ var spotifyKeys = {
 	id: '8a4aa62e3aa047a9be8483e07bbe1652',
   	secret: 'd2fb14a540d741e59497971914d99af3'
 }
-var omdbKeys ={
+var omdbKeys = '40e9cece'
 
-}
 module.exports = {
 	twitterKeys,
 	spotifyKeys,

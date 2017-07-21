@@ -1,10 +1,11 @@
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
+var request = require('request');
 var Keys = require("./keys.js");
-//console.log(Keys);
 
 var myTwitter = require("./apps/twitter.js")(Keys.twitterKeys);//getting just the twitter keys from the keys.js file
 var mySpotify = require("./apps/spotify.js")(Keys.spotifyKeys);
+var myOmdb = require("./apps/omdb.js")(Keys.omdbKeys);
 
 var command = (process.argv[2]);
 var songOrMovie = (process.argv[3]);
@@ -19,7 +20,7 @@ switch (command){
 
 	case "spotify-this-song": { 
 		mySpotify.spotify(function(mySpotify){ 
-			console.log("SPOTIFY DATA",mySpotify);
+			//console.log("SPOTIFY DATA",mySpotify);
 			for(var item in mySpotify.tracks.items){//log artist name, song, album, preview link from spotify
 				console.log("The name of this track is: ", mySpotify.tracks.items[item].name);
 				console.log("The name of the artist is: ", mySpotify.tracks.items[item].artists[0].name);
@@ -29,6 +30,13 @@ switch (command){
 		});
 	}
 	break;
+
+	case "movie-this": {
+		myOmdb.omdb(function(myOmdb){
+			console.log(response);
+		});
+		console.log(myOmdb);
+	}
 	default: //need a default case in case something doesn't match
 	return;
 };

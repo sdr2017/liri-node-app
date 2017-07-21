@@ -1,8 +1,6 @@
 var Spotify = require('node-spotify-api');
-	console.log("Test2");
 
 var mySpotify = function(keys){
-	console.log("Test1");
 	var that;
 	var client = new Spotify(keys);
 
