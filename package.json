@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/sdr2017/liri-node-app/issues"
   },
-  "homepage": "https://github.com/sdr2017/liri-node-app#readme"
+  "homepage": "https://github.com/sdr2017/liri-node-app#readme",
+  "keywords": []
 }
