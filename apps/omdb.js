@@ -6,7 +6,6 @@ var myOmdb = function(keys) {
 	var client = Keys.omdbKeys;
 
 	function omdb(cb) { 
-		debugger;
 		var songOrMovie = (process.argv[3]);
 		var queryURL = "http://www.omdbapi.com/?t=" + songOrMovie + "&y=&plot=short&apikey=" + client;
 
@@ -19,7 +18,6 @@ var myOmdb = function(keys) {
 
 	that = {};
 	that.omdb = function(cb){omdb(cb);};
-	debugger;
 	return that;
 	console.log(that);
 };

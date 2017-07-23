@@ -24,7 +24,6 @@ function myCommands(){
 
 		case "spotify-this-song": 
 			mySpotify.spotify(function(mySpotify){ 
-				//console.log("SPOTIFY DATA",mySpotify);
 				for(var item in mySpotify.tracks.items){//log artist name, song, album, preview link from spotify
 					console.log("The name of this track is: ", mySpotify.tracks.items[item].name);
 					console.log("The name of the artist is: ", mySpotify.tracks.items[item].artists[0].name);
@@ -41,6 +40,7 @@ function myCommands(){
 		break;
 
 		case "do-what-it-says":
+			debugger;
 			myRandom();
 		break;
 		default: //need a default case in case something doesn't match
@@ -49,6 +49,7 @@ function myCommands(){
 };
 
 module.exports = myCommands;
+console.log("my commands", myCommands);
 
 
 

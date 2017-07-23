@@ -5,7 +5,6 @@ var myTwitter = function(keys){
 	var client = new Twitter(keys);
 
 	function tweets(cb) { //cb is the function "myTweets" we passed from the liri.js file
-		debugger;
 		var params = {screen_name: 'allTheGOT'}; //setting params to my screen name
 		
 		client.get("statuses/user_timeline", params, function (error, tweets, response) { 	//getting the tweets from my username
