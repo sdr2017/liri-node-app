@@ -6,18 +6,19 @@
 
 var fs = require('fs');
 var myCommands = require("../liri.js");
-console.log(myCommands);
+//console.log("random.js", myCommands);
 
-var myRandom = function(){
+var myRandom = function(cb){
 	fs.readFile("random.txt", "utf8", function(err, data){
 		debugger;
 		if (err) throw err;
 		var randomData = data.split(",");
 		var command = randomData[0];
 		var songOrMovie = randomData[1];
-		myCommands.myCommands(function(myCommands){
-			console.log("test");
-		});
+		//myCommands.myCommands(function(myCommands){
+		//	console.log("test");
+		//});
+		cb(command, songOrMovie);
 
 	});
 };

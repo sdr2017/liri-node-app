@@ -4,10 +4,11 @@ var mySpotify = function(keys){
 	var that;
 	var client = new Spotify(keys);
 
-	function spotify(cb) { 
-		var songOrMovie = (process.argv[3]); 
-
-		client.search({ type: 'track', query: songOrMovie, limit: 1 }, function(err, data) {
+	function spotify(songOrMovie, cb) { 
+		//var songOrMovie = (process.argv[3]); 
+		//console.log("What is the song and cb", songOrMovie, cb)
+		var song = songOrMovie || "Ace of Base, The Sign";
+		client.search({ type: 'track', query: song, limit: 1 }, function(err, data) {
 			if (err) {
     			return console.log('Error occurred: ' + err);
   			}
@@ -16,7 +17,7 @@ var mySpotify = function(keys){
 	};
 
 	that = {};
-	that.spotify = function(cb){spotify(cb);};
+	that.spotify = function(input, cb){spotify(input, cb);};
 	return that;
 	
 };
