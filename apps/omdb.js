@@ -13,7 +13,7 @@ var myOmdb = function(keys) {
 		request(queryURL, function (error, response, body) {
 
 			var bodyInfo = JSON.parse(body);
-			
+
 			console.log("Movie title: ", bodyInfo.Title);
 			console.log("IMDB Rating: ", bodyInfo.imdbRating);
 			console.log("Country Produced: ", bodyInfo.Country);
@@ -24,15 +24,6 @@ var myOmdb = function(keys) {
 
 		});
 };
-
- // * Title of the movie.
- //   * Year the movie came out.
- //   * IMDB Rating of the movie.
- //   * Country where the movie was produced.
- //   * Language of the movie.
- //   * Plot of the movie.
- //   * Actors in the movie.
- //   * Rotten Tomatoes URL.
 
 	that = {};
 	that.omdb = function(cb){omdb(cb);};
